@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Condicionales</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Condicionales</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="c1()">Ejercicio 1</button>
+            <button onclick="c2()">Ejercicio 2</button>
+            <button onclick="c3()">Ejercicio 3</button>
+            <button onclick="c4()">Ejercicio 4</button>
+            <button onclick="c5()">Ejercicio 5</button>
+            <button onclick="c6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back"
+            href="index.html">← Volver al menú</a>
+    </div>
+    <script>
+        // 1. Pide una calificación y muestra si aprobó (>=60).
+        function c1() { let nota = parseFloat(prompt('Ingresa la calificación (0-100):')); if (isNaN(nota)) { alert('Entrada inválida'); return; } alert(nota >= 60 ? 'Aprobado' : 'No aprobado'); }
+
+        // 2. Pide un número y dice si es positivo, negativo o cero.
+        function c2() { let n = parseFloat(prompt('Ingresa un número:')); if (isNaN(n)) { alert('Entrada inválida'); return; } if (n > 0) alert('Positivo'); else if (n < 0) alert('Negativo'); else alert('Cero'); }
+
+        // 3. Pide un número del 1 al 7 y muestra el día con switch.
+        function c3() { let d = parseInt(prompt('Número del 1 al 7:')); switch (d) { case 1: alert('Lunes'); break; case 2: alert('Martes'); break; case 3: alert('Miércoles'); break; case 4: alert('Jueves'); break; case 5: alert('Viernes'); break; case 6: alert('Sábado'); break; case 7: alert('Domingo'); break; default: alert('Número fuera de rango'); } }
+
+        // 4. Pide dos números y muestra cuál es mayor (ternario).
+        function c4() { let a = parseFloat(prompt('Número A:')); let b = parseFloat(prompt('Número B:')); if (isNaN(a) || isNaN(b)) { alert('Entrada inválida'); return; } alert(a > b ? 'El mayor es: ' + a : 'El mayor es: ' + b); }
+
+        // 5. Pide edad y dice si es mayor de edad usando if else.
+        function c5() { let edad = parseInt(prompt('Edad:')); if (isNaN(edad)) { alert('Entrada inválida'); return; } if (edad >= 18) alert('Eres mayor de edad'); else alert('Eres menor de edad'); }
+
+        // 6. Pide un número y muestra si es divisible por 3, 5 o ambos usando switch.
+        function c6() { let n = parseInt(prompt('Ingresa un número:')); if (isNaN(n)) { alert('Entrada inválida'); return; } let key = (n % 3 === 0 ? 1 : 0) + (n % 5 === 0 ? 2 : 0); switch (key) { case 0: alert('No divisible por 3 ni por 5'); break; case 1: alert('Divisible por 3'); break; case 2: alert('Divisible por 5'); break; case 3: alert('Divisible por 3 y 5'); break; } }
+    </script>
+</body>
+
+</html>

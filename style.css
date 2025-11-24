@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fb, #eaf3ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, #6C63FF, #42A5F5);
+    color: #f8f8f8;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-4px);
+}
+
+
+.row {
+    display: flexbox;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+
+button {
+    background: linear-gradient(135deg, #f1f1f1, #42A5F5);
+    color: rgb(248, 247, 247);
+    padding: 16px 20px;
+    border-radius: 140px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(108, 99, 255, 0.4);
+}
+
+
+button.secondary {
+    background: linear-gradient(135deg, #FF8A65, #FF7043);
+    box-shadow: 0 4px 10px rgba(255, 112, 67, 0.3);
+}
+
+
+.small {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.back {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #42A5F5;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back:hover {
+    color: #6C63FF;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

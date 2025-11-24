@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Arrays</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Arrays</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="a1()">Ejercicio 1</button>
+            <button onclick="a2()">Ejercicio 2</button>
+            <button onclick="a3()">Ejercicio 3</button>
+            <button onclick="a4()">Ejercicio 4</button>
+            <button onclick="a5()">Ejercicio 5</button>
+            <button onclick="a6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back" href="index.html">← Volver
+            al menú</a>
+    </div>
+    <script>
+        // 1. Array con 5 números, mostrar primer y último.
+        function a1() { let arr = [parseFloat(prompt('Número 1:')), parseFloat(prompt('Número 2:')), parseFloat(prompt('Número 3:')), parseFloat(prompt('Número 4:')), parseFloat(prompt('Número 5:'))]; alert('Primero: ' + arr[0] + '\nÚltimo: ' + arr[arr.length - 1]); }
+
+        // 2. Array con 5 ciudades y mostrar segunda.
+        function a2() { let ciudades = []; for (let i = 0; i < 5; i++) { let c = prompt('Ciudad ' + (i + 1) + ':'); ciudades.push(c === null ? '' : c); } alert('Segunda ciudad: ' + ciudades[1]); }
+
+        // 3. Pedir 5 números al usuario, almacenar y mostrar suma.
+        function a3() { let nums = []; for (let i = 0; i < 5; i++) { let v = parseFloat(prompt('Número ' + (i + 1) + ':')); if (isNaN(v)) v = 0; nums.push(v); } let s = nums.reduce((a, b) => a + b, 0); alert('Suma = ' + s); }
+
+        // 4. Recorrer un array de 5 palabras y mostrar cada palabra en consola.
+        function a4() { let palabras = []; for (let i = 0; i < 5; i++) { let p = prompt('Palabra ' + (i + 1) + ':'); palabras.push(p === null ? '' : p); } console.log('Palabras:', palabras); alert('Palabras enviadas a la consola.'); }
+
+        // 5. Crear array vacío y pedir 5 nombres al usuario, luego mostrar array.
+        function a5() { let nombres = []; for (let i = 0; i < 5; i++) { let n = prompt('Nombre ' + (i + 1) + ':'); nombres.push(n === null ? '' : n); } alert('Nombres: ' + nombres.join(', ')); }
+
+        // 6. Pedir 10 números y mostrar cuántos son mayores a 50.
+        function a6() { let count = 0; for (let i = 0; i < 10; i++) { let n = parseFloat(prompt('Número ' + (i + 1) + ':')); if (!isNaN(n) && n > 50) count++; } alert('Cantidad mayores a 50: ' + count); }
+    </script>
+</body>
+
+</html>

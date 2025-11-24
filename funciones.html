@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Funciones</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Funciones</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="f1()">Ejercicio 1</button>
+            <button onclick="f2()">Ejercicio 2</button>
+            <button onclick="f3()">Ejercicio 3</button>
+            <button onclick="f4()">Ejercicio 4</button>
+            <button onclick="f5()">Ejercicio 5</button>
+            <button onclick="f6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back"
+            href="index.html">← Volver al menú</a>
+    </div>
+    <script>
+        // 1. Función que suma dos números y retorna el resultado.
+        function suma(a, b) { return a + b; }
+        function f1() { let a = parseFloat(prompt('Número 1:')); let b = parseFloat(prompt('Número 2:')); if (isNaN(a) || isNaN(b)) { alert('Entrada inválida'); return; } alert('Resultado: ' + suma(a, b)); }
+
+        // 2. Función que recibe un nombre y muestra un saludo en la consola.
+        function saludar(nombre) { console.log('Hola, ' + nombre + '!'); }
+        function f2() { let n = prompt('Ingresa un nombre:'); if (n === null) { alert('Cancelado'); } else { saludar(n); alert('Saludo enviado a la consola.'); } }
+
+        // 3. Función que calcula el área de un círculo y retorna el resultado.
+        function areaCirculo(r) { return Math.PI * r * r; }
+        function f3() { let r = parseFloat(prompt('Radio del círculo:')); if (isNaN(r)) { alert('Entrada inválida'); return; } alert('Área = ' + areaCirculo(r)); }
+
+        // 4. Función que recibe dos números y retorna el mayor.
+        function mayor(a, b) { return a > b ? a : b; }
+        function f4() { let a = parseFloat(prompt('Número A:')); let b = parseFloat(prompt('Número B:')); if (isNaN(a) || isNaN(b)) { alert('Entrada inválida'); return; } alert('El mayor es: ' + mayor(a, b)); }
+
+        // 5. Función que devuelve true si es par, false si impar.
+        function esPar(n) { return n % 2 === 0; }
+        function f5() { let n = parseInt(prompt('Ingresa un número:')); if (isNaN(n)) { alert('Entrada inválida'); return; } alert(esPar(n)); }
+
+        // 6. Función que toma un array de números y devuelve el promedio.
+        function promedio(arr) { if (arr.length === 0) return 0; let s = 0; for (let v of arr) s += v; return s / arr.length; }
+        function f6() { let cant = parseInt(prompt('¿Cuántos números quieres promediar?')); if (isNaN(cant) || cant <= 0) { alert('Entrada inválida'); return; } let arr = []; for (let i = 0; i < cant; i++) { let v = parseFloat(prompt('Número ' + (i + 1) + ':')); if (isNaN(v)) v = 0; arr.push(v); } alert('Promedio = ' + promedio(arr)); }
+    </script>
+</body>
+
+</html>

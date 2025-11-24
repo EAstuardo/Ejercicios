@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Salidas</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Salidas a pantalla</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="e1()">Ejercicio 1</button>
+            <button onclick="e2()">Ejercicio 2</button>
+            <button onclick="e3()">Ejercicio 3</button>
+            <button onclick="e4()">Ejercicio 4</button>
+            <button onclick="e5()">Ejercicio 5</button>
+            <button onclick="e6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back"
+            href="index.html">← Volver al menú principal</a>
+    </div>
+    <script>
+        // 1. Mensaje de bienvenida en la consola.
+        function e1() { console.log("¡Bienvenido a la práctica de JavaScript!"); alert("Mensaje enviado a la consola. Abre la consola (F12) para verlo."); }
+
+        // 2. Mostrar la suma de dos números (usando alert).
+        function e2() { let a = parseFloat(prompt("Ingrese el primer número:")); let b = parseFloat(prompt("Ingrese el segundo número:")); if (isNaN(a) || isNaN(b)) { alert("Entrada inválida"); return; } alert("La suma es: " + (a + b)); }
+
+        // 3. Pedir nombre y saludar (prompt + alert).
+        function e3() { let nombre = prompt("Introduce tu nombre:"); if (nombre === null) { alert("Cancelado"); } else { alert("Hola, " + nombre + "!"); } }
+
+        // 4. Mostrar el valor de una variable en la consola.
+        function e4() { let miVar = "Este es el valor de la variable"; console.log(miVar); alert("Valor enviado a la consola."); }
+
+        // 5. Mostrar la fecha actual usando Date() en un alert.
+        function e5() { let ahora = new Date(); alert("Fecha y hora actual: " + ahora.toString()); }
+
+        // 6. Mostrar "Hola, Mundo" dentro de una página HTML con document.write().
+        function e6() { document.open(); document.write("<h2>Hola, Mundo</h2><p>Mostrado con document.write()</p><p><a href='../index.html'> Volver al menú </a></p> ");  document.close(); }
+    </script>
+</body>
+</html>

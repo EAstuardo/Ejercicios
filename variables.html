@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Variables</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Variables</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="v1()">Ejercicio 1</button>
+            <button onclick="v2()">Ejercicio 2</button>
+            <button onclick="v3()">Ejercicio 3</button>
+            <button onclick="v4()">Ejercicio 4</button>
+            <button onclick="v5()">Ejercicio 5</button>
+            <button onclick="v6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back" href="index.html">←
+            Volver al menú</a>
+    </div>
+    <script>
+        // 1. Declara tres variables y muestra en consola.
+        function v1() { let nombre = 'Ana'; let edad = 20; let ciudad = 'Guatemala'; console.log('Nombre:', nombre, 'Edad:', edad, 'Ciudad:', ciudad); alert('Valores enviados a la consola.'); }
+
+        // 2. Almacenar pi y mostrar su valor.
+        function v2() { let pi = 3.1416; alert('El valor de pi es: ' + pi); }
+
+        // 3. Variable número y string, mostrarlos juntos en consola.
+        function v3() { let numero = 42; let texto = 'El número es'; console.log(texto + ' ' + numero); alert('Revisa la consola.'); }
+
+        // 4. Multiplicar dos números y mostrar el resultado.
+        function v4() { let a = parseFloat(prompt('Primer número:')); let b = parseFloat(prompt('Segundo número:')); if (isNaN(a) || isNaN(b)) { alert('Entrada inválida'); return; } let res = a * b; alert('Resultado: ' + res); }
+
+        // 5. Pedir edad y mostrar "Tienes [edad] años".
+        function v5() { let edad = prompt('Ingresa tu edad:'); if (edad === null) { alert('Cancelado'); } else { alert('Tienes ' + edad + ' años'); } }
+
+        // 6. Nombre y apellido, mostrar nombre completo en consola.
+        function v6() { let nombre = prompt('Nombre:'); let apellido = prompt('Apellido:'); if (nombre === null || apellido === null) { alert('Cancelado'); } else { console.log('Nombre completo: ' + nombre + ' ' + apellido); alert('Nombre completo enviado a la consola.'); } }
+    </script>
+</body>
+
+</html>

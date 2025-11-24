@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ciclos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ciclos</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="cy1()">Ejercicio 1</button>
+            <button onclick="cy2()">Ejercicio 2</button>
+            <button onclick="cy3()">Ejercicio 3</button>
+            <button onclick="cy4()">Ejercicio 4</button>
+            <button onclick="cy5()">Ejercicio 5</button>
+            <button onclick="cy6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back" href="index.html">← Volver al
+            menú</a>
+    </div>
+    <script>
+        // 1. Mostrar números del 1 al 10 usando for (console).
+        function cy1() { let out = ''; for (let i = 1; i <= 10; i++) { out += i + (i < 10 ? ', ' : ''); } console.log('1..10: ' + out); alert('Números del 1 al 10 enviados a la consola.'); }
+
+        // 2. Suma del 1 al 100 usando while.
+        function cy2() { let sum = 0, i = 1; while (i <= 100) { sum += i; i++; } alert('Suma del 1 al 100 = ' + sum); }
+
+        // 3. Pedir número y mostrar tabla de multiplicar usando for.
+        function cy3() { let n = parseInt(prompt('Número para tabla (1..):')); if (isNaN(n)) { alert('Entrada inválida'); return; } let res = ''; for (let i = 1; i <= 10; i++) { res += n + ' x ' + i + ' = ' + (n * i) + '\n'; } alert(res); }
+
+        // 4. Mostrar primeros 10 pares usando while (console).
+        function cy4() { let arr = []; let num = 2; while (arr.length < 10) { arr.push(num); num += 2; } console.log('10 primeros pares: ' + arr.join(', ')); alert('Primeros 10 pares enviados a la consola.'); }
+
+        // 5. Pedir números hasta que ingrese uno negativo usando do while.
+        function cy5() { let nums = []; let n; do { n = parseFloat(prompt('Ingresa un número (negativo para terminar):')); if (n === null) { alert('Cancelado'); return; } if (n >= 0) nums.push(n); } while (n >= 0); alert('Ingresaste ' + nums.length + ' números no negativos.'); }
+
+        // 6. Contar cuántas veces aparece 'a' en una palabra dada usando for.
+        function cy6() { let palabra = prompt('Ingresa una palabra:'); if (palabra === null) { alert('Cancelado'); return; } let c = 0; for (let ch of palabra.toLowerCase()) { if (ch === 'a') c++; } alert("La letra 'a' aparece " + c + ' veces.'); }
+    </script>
+</body>
+
+</html>

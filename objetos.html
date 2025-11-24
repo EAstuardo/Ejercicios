@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Objetos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Objetos</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button onclick="o1()">Ejercicio 1</button>
+            <button onclick="o2()">Ejercicio 2</button>
+            <button onclick="o3()">Ejercicio 3</button>
+            <button onclick="o4()">Ejercicio 4</button>
+            <button onclick="o5()">Ejercicio 5</button>
+            <button onclick="o6()">Ejercicio 6</button>
+        </div>
+        <p class="small"></p><a class="back" href="index.html">←
+            Volver al menú</a>
+    </div>
+    <script>
+        // 1. Objeto persona
+        function o1() { let persona = { nombre: prompt('Nombre de la persona:'), edad: parseInt(prompt('Edad:')), ciudad: prompt('Ciudad:') }; console.log(persona); alert('Objeto persona creado y mostrado en consola.'); }
+
+        // 2. Objeto coche con método que muestra descripción en consola.
+        function o2() { let marca = prompt('Marca:'); let modelo = prompt('Modelo:'); let año = prompt('Año:'); let coche = { marca, modelo, año, descripcion: function () { return this.marca + ' ' + this.modelo + ' (' + this.año + ')'; } }; console.log(coche.descripcion()); alert('Descripción del coche enviada a la consola.'); }
+
+        // 3. Objeto rectángulo con método para calcular área.
+        function o3() { let ancho = parseFloat(prompt('Ancho:')); let alto = parseFloat(prompt('Alto:')); if (isNaN(ancho) || isNaN(alto)) { alert('Entrada inválida'); return; } let rect = { ancho, alto, area: function () { return this.ancho * this.alto; } }; alert('Área = ' + rect.area()); }
+
+        // 4. Objeto libro con método que muestra descripción en consola.
+        function o4() { let titulo = prompt('Título:'); let autor = prompt('Autor:'); let año = prompt('Año:'); let libro = { titulo, autor, año, descripcion: function () { return this.titulo + ' - ' + this.autor + ' (' + this.año + ')'; } }; console.log(libro.descripcion()); alert('Descripción del libro enviada a la consola.'); }
+
+        // 5. Objeto usuario que verifica contraseña "123456".
+        function o5() { let nombre = prompt('Nombre de usuario:'); let contraseña = prompt('Introduce contraseña:'); let usuario = { nombre, contraseña, verificar: function () { return this.contraseña === '123456'; } }; alert('¿Contraseña correcta? ' + usuario.verificar()); }
+
+        // 6. Objeto gato con método que devuelve mensaje con nombre y edad.
+        function o6() { let nombre = prompt('Nombre del gato:'); let edad = parseInt(prompt('Edad del gato:')); if (isNaN(edad)) { alert('Edad inválida'); return; } let gato = { nombre, edad, info: function () { return 'El gato ' + this.nombre + ' tiene ' + this.edad + ' años.'; } }; alert(gato.info()); }
+    </script>
+</body>
+
+</html>
